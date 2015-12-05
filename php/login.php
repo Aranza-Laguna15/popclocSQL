@@ -4,7 +4,7 @@ include('config.inc.php');
 $error='';
 if(isset($_POST['submit'])){
 if(empty($_POST['correo']) || empty($_POST['contraseña'])){
-$error= "Correo o contraseña invalidos";
+print( "Error Correo o contraseña invalidos");
 }else{
 
      $correo= $_POST['correo'];
@@ -17,7 +17,6 @@ $error= "Correo o contraseña invalidos";
     $_SESSION['valid_user'] = true;
     $_SESSION['correo'] = $correo;
     header('Location: intro-page.html');
-    die();
 }else{
     header('Location: error.html');
     die(print_r( sqlsrv_errors(), true));
