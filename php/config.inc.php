@@ -9,9 +9,9 @@ $username = "popcloc@b63ioz7h2m";
 //$db = new PDO("sqlsrv:server=$host,Database=$dbname", $username, $password);
 $con = sqlsrv_connect($host, $connectinfo);
  if($con == true){
-  echo "Conexión establecida";
+ alert('Conexión establecida');
  }else{
- echo "Error al conectar la base de datos\n";
+ alert ('Error al conectar la base de datos\n');
   die(print_r( sqlsrv_errors(), true));
  }
      //$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
