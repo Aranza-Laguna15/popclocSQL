@@ -1,20 +1,43 @@
 <?php 
-session_start();
+
 $username = "popcloc"; 
     $password = "Manuel_$%&"; 
-    $host = "tcp:b63ioz7h2m.database.windows.net,1433"; 
+    $host = "b63ioz7h2m.database.windows.net,1433"; 
     $dbname = "databasepopcloc"; 
     //$connectinfo = array("Database"=>$dbname, "UID"=>$username, "PWD"=>$password, "MultipleActiveResultSets"=>true);
     //sqlsrv_configure('WarningsReturnAsErrors',0);
     try {
 $con = new PDO("sqlsrv:server=$host,Database=$dbname", $username, $password);
-$con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
-$con->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
 print( "Correct connecting to SQL Server." );
 }catch ( PDOException $e ) {
 print( "Error connecting to SQL Server.\n" );
 die(print_r($e));
 }
+$con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
+$con->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+if(function_exists('get_magic_quotes_gpc') && get_magic_quotes_gpc()) 
+    { 
+        function undo_magic_quotes_gpc(&$array) 
+        { 
+            foreach($array as &$value) 
+            { 
+                if(is_array($value)) 
+                { 
+                    undo_magic_quotes_gpc($value); 
+                } 
+                else 
+                { 
+                    $value = stripslashes($value); 
+                } 
+            } 
+        } 
+     
+        undo_magic_quotes_gpc($_POST); 
+        undo_magic_quotes_gpc($_GET); 
+        undo_magic_quotes_gpc($_COOKIE); 
+    } 
+     
 //$con = sqlsrv_connect($host, $connectinfo);
  /*if($con == true){
  echo "Conexión establecida";
@@ -36,4 +59,4 @@ die(print_r($e));
     header('Location: error.html');
     die(print_r( sqlsrv_errors(), true));
 }*/
-?>
+session_start();
