@@ -5,7 +5,7 @@ if(empty($_POST['correo']) || empty($_POST['contraseña'])){
 print("Error Correo o contraseña invalidos");
 }else{
 try{
-     $username = "popcloc"; 
+$username = "popcloc"; 
     $password = "Manuel_$%&"; 
     $host = "b63ioz7h2m.database.windows.net,1433"; 
     $dbname = "databasepopcloc"; 
@@ -17,7 +17,7 @@ try{
 
      $tsql="SELECT * FROM usuarios WHERE 'correo' = :correo  AND 'contraseña' = :contraseña"; 
      $stmt= $con->prepare($tsql);
-     $stmt->execute(array(':correo'=>$_POST['correo'],':contraseña'=>$_POST['contraseña']));
+     $stmt->execute(array(':correo'=>$correo,':contraseña'=>$contraseña));
      $num=$stmt->rowCount();
      if($num>0){
    header('Location: intro-page.html');
