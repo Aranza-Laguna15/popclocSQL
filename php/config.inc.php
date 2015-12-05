@@ -1,6 +1,6 @@
 <?php 
 session_start();
-$username = "popcloc@b63ioz7h2m"; 
+$username = "popcloc"; 
     $password = "Manuel_$%&"; 
     $host = "tcp:b63ioz7h2m.database.windows.net,1433"; 
     $dbname = "databasepopcloc"; 
@@ -10,6 +10,7 @@ $username = "popcloc@b63ioz7h2m";
 $con = new PDO("sqlsrv:server=$host,Database=$dbname", $username, $password);
 $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
 $con->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+print( "Correct connecting to SQL Server." );
 }catch ( PDOException $e ) {
 print( "Error connecting to SQL Server.\n" );
 die(print_r($e));
@@ -21,7 +22,7 @@ die(print_r($e));
  }else{
  echo "Error al conectar la base de datos\n";
   die(print_r( sqlsrv_errors(), true));
- }*/
+ }
     $nombreusuario = $_REQUEST['nombreusuario'];
     $contraseña = $_REQUEST['contraseña'];
     $consulta = "SELECT * FROM usuarios WHERE nombreusuario = 'nombreusuario'  AND contraseña = 'contraseña'";
@@ -34,5 +35,5 @@ die(print_r($e));
 }else{
     header('Location: error.html');
     die(print_r( sqlsrv_errors(), true));
-}
+}*/
 ?>
