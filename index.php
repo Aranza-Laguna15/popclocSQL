@@ -1,9 +1,3 @@
-<?php
-include('php/login.php');
-if(isset($_SESSION['valid_user'])){
-    header('Location: php/intro-page.html');
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,7 +42,7 @@ if(isset($_SESSION['valid_user'])){
                     
                     <li class="page-scroll">
 
-             <form class="navbar-form navbar-right" action="" method="post">
+             <form class="navbar-form navbar-right" action="php/login.php" method="post">
             <div class="form-group">
             <input type="text" placeholder="Correo" class="form-control" name="correo">
             </div>
