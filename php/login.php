@@ -16,8 +16,9 @@ $username = "popcloc";
      $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
 
      $tsql="SELECT * FROM usuarios WHERE 'correo' = :correo  AND 'contraseña' = :contraseña"; 
+     $s=array(':correo'=>$params['correo'],':contraseña'=>$params['contraseña']);
      $stmt= $con->prepare($tsql);
-     $stmt->execute(array(':correo'=>$correo,':contraseña'=>$contraseña));
+     $stmt->execute($s);
      $num=$stmt->rowCount();
      if($num>0){
    header('Location: intro-page.html');
