@@ -9,8 +9,8 @@ $username = "popcloc";
     try {
 $con = new PDO("sqlsrv:server=$host,Database=$dbname", $username, $password);
 $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
-$con->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-print( "Correct connecting to SQL Server." );
+//$con->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
 }catch ( PDOException $e ) {
 print( "Error connecting to SQL Server.\n" );
 die(print_r($e->getMessage()));
