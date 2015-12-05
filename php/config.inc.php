@@ -1,4 +1,4 @@
-﻿<?php 
+<?php 
 session_start();
 $username = "popcloc@b63ioz7h2m"; 
     $password = "Manuel_$%&"; 
@@ -9,9 +9,10 @@ $username = "popcloc@b63ioz7h2m";
 //$db = new PDO("sqlsrv:server=$host,Database=$dbname", $username, $password);
 $con = sqlsrv_connect($host, $connectinfo);
  if($con == true){
- alert('Conexión establecida');
+ echo "Conexión establecida";
+ header('Location: registro.php');
  }else{
- alert ('Error al conectar la base de datos\n');
+ echo "Error al conectar la base de datos\n";
   die(print_r( sqlsrv_errors(), true));
  }
      //$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
