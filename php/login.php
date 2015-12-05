@@ -15,11 +15,11 @@ try{
      $con = new PDO("sqlsrv:server=$host,Database=$dbname", $username, $password);
      $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
 
-     $tsql="SELECT * FROM usuarios WHERE correo = '$correo'  AND contraseña = '$contraseña'"; 
+     $tsql="SELECT * FROM usuarios WHERE 'correo' = :correo  AND 'contraseña' = :contraseña"; 
      $stmt= $con->prepare($tsql);
-     $stmt->execute(array('$correo'=>$_POST['correo'],'$contraseña'=>$_POST['contraseña']));
+     $stmt->execute(array(':correo'=>$_POST['correo'],':contraseña'=>$_POST['contraseña']));
      $num=$stmt->rowCount();
-     if($num>=1){
+     if($num>0){
    header('Location: intro-page.html');
 }else{
    header('Location: error.html');
