@@ -1,7 +1,12 @@
+<?php
+include('php/login.php');
+if(isset($_SESSION['valid_user'])){
+    header('Location: php/intro-page.html');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -42,13 +47,8 @@
                         <a href="#page-top"></a>
                     
                     <li class="page-scroll">
-<?php
-include('php/login.php');
-if(isset($_SESSION['valid_user'])){
-    header('Location: php/intro-page.html');
-}
-?>
-             <form class="navbar-form navbar-right" action="php/login.php" method="post">
+
+             <form class="navbar-form navbar-right" action="" method="post">
             <div class="form-group">
             <input type="text" placeholder="Correo" class="form-control" name="correo">
             </div>
