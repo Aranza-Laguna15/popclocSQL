@@ -44,79 +44,9 @@
                     <li class="page-scroll">
 <?php
 include('php/login.php');
-if(isset($_SESSION['valid_user']==true)){
+if(isset($_SESSION['valid_user'])){
     header('Location: php/intro-page.html');
 }
-/*
-//carga y se conecta a la base de datos
-include("php/config.inc.php");
-if (!empty($_POST)) {
-    //obteneos los usuarios respecto a la usuario que llega por parametro
-    $query = " 
-            SELECT 
-                id, 
-                claveusuario, 
-                nombreusuario,
-                correo,
-                contraseña,
-                edad,
-                sexo
-            FROM usuarios 
-            WHERE 
-                correo = :correo 
-        ";
-    
-    $query_params = array(
-        ':correo' => $_POST['correo']
-    );
-    
-    try {
-        $stmt   = $db->prepare($query);
-        $result = $stmt->execute($query_params);
-    }
-    catch (PDOException $ex) {
-        //para testear pueden utilizar lo de abajo
-        //die("la consulta murio " . $ex->getMessage());
-        
-        $response["success"] = 0;
-        $response["message"] = "Problema con la base de datos, vuelve a intetarlo";
-        die(json_encode($response));
-        
-    }
-    
-    //la variable a continuación nos permitirará determinar 
-    //si es o no la información correcta
-    //la inicializamos en "false"
-    $validated_info = false;
-    
-    //vamos a buscar a todas las filas
-    $row = $stmt->fetch();
-    if ($row) {
-        //si el password viene encryptado debemos desencryptarlo acá
-        // ++ DESCRYPTAR ++//
-
-        //encaso que no lo este, solo comparamos como acontinuación
-        if ($_POST['contraseña'] === $row['contraseña']) {
-            $login_ok = true;
-        }
-    }
-    
-    // así como nos logueamos en facebook, twitter etc!
-    // Otherwise, we display a login failed message and show the login form again 
-    if ($login_ok) {
-        $response["success"] = 1;
-        $response["message"] = "Login correcto!";
-        die(json_encode($response));
-    } else {
-        $response["success"] = 0;
-        $response["message"] = "Login INCORRECTO";
-        die(json_encode($response));
-    }
-} else {
-    <?php
-}
-?> */
-
 ?>
              <form class="navbar-form navbar-right" action="" method="post">
             <div class="form-group">
