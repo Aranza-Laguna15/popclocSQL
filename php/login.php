@@ -16,7 +16,7 @@ $username = "popcloc";
      $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
 
      $tsql="SELECT * FROM usuarios WHERE 'correo' = :correo  AND 'contraseña' = :contraseña"; 
-     $s=array(':correo'=>$params['correo'],':contraseña'=>$params['contraseña']);
+     $s=array(':correo'=>$_POST['correo'],':contraseña'=>$_POST['contraseña']);
      $stmt= $con->prepare($tsql);
      $stmt->execute($s);
      $num=$stmt->rowCount();
