@@ -15,7 +15,7 @@ $username = "popcloc";
      $con = new PDO("sqlsrv:server=$host,Database=$dbname", $username, $password);
      $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
 //,':contraseña'=>$contraseña
-     $tsql="SELECT * FROM databasepopcloc.usuarios WHERE 'correo' = :correo "; 
+     $tsql="SELECT correo FROM usuarios WHERE 'correo' = :correo "; 
      $stmt= $con->prepare($tsql);
      $stmt->execute(array(':correo'=>$correo));
      $user=$stmt->fetch(PDO::FETCH_ASSOC);
