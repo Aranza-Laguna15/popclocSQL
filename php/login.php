@@ -14,14 +14,14 @@ $username = "popcloc";
      $contraseña = $_POST['contraseña'];
      $con = new PDO("sqlsrv:server=$host,Database=$dbname", $username, $password);
      $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
-
-     $tsql="SELECT * FROM usuarios WHERE 'correo' = :correo  AND 'contraseña' = :contraseña"; 
-     $s=array(':correo'=>$_POST['correo'],':contraseña'=>$_POST['contraseña']);
+//,':contraseña'=>$contraseña
+     $tsql="SELECT * FROM usuarios WHERE 'correo' = :correo LIMIT 1"; 
      $stmt= $con->prepare($tsql);
-     $stmt->execute($s);
-     $num=$stmt->rowCount();
-     if($num>0){
+     $stmt->execute(array(':correo'=>$correo));
+     $user=$stmt->fetch(PDO::FETCH_ASSOC);
+     if($stmt->rowCount() > 0){
    header('Location: intro-page.html');
+   
 }else{
    header('Location: error.html');
     die(print_r( sqlsrv_errors(), true));
