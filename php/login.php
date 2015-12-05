@@ -19,12 +19,11 @@ try{
      $stmt= $con->prepare($tsql);
      $stmt->execute(array('$correo'=>$_POST['correo'],'$contraseña'=>$_POST['contraseña']));
      $num=$stmt->rowCount();
-     if($num==0){
-     header('Location: error.html');
-    die(print_r( sqlsrv_errors(), true));
-    
-}else{
+     if($num>=1){
    header('Location: intro-page.html');
+}else{
+   header('Location: error.html');
+    die(print_r( sqlsrv_errors(), true));
 }
 }catch( PDOException $e ) {
 print( "Error connecting to SQL Server.\n" );
