@@ -27,7 +27,7 @@ $con = sqlsrv_connect($host, $connectinfo);
     header('Location: intro-page.html');
     die();
 }else{
-    header('Location: ../index.php');
+    header('Location: error.html');
     die(print_r( sqlsrv_errors(), true));
 }
 ?>
