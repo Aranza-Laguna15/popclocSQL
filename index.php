@@ -43,10 +43,9 @@
                     
                     <li class="page-scroll">
 <?php
-session_start();
-if($_SESSION['valid_user']!=false){
+include('php/login.php');
+if(isset($_SESSION['valid_user']==true)){
     header('Location: php/intro-page.html');
-    die();
 }
 /*
 //carga y se conecta a la base de datos
@@ -119,15 +118,15 @@ if (!empty($_POST)) {
 ?> */
 
 ?>
-             <form class="navbar-form navbar-right" action="php/config.inc.php" method="post">
+             <form class="navbar-form navbar-right" action="" method="post">
             <div class="form-group">
             <input type="text" placeholder="Correo" class="form-control" name="correo">
             </div>
             <div class="form-group">
              <input type="password" placeholder="Contraseña" class="form-control" name="contraseña">
             </div>
-            <button type="submit" class="btn btn-success" value="Login">Entrar</button><br>
-</form> </li>
+            <button type="submit" class="btn btn-success" name="submit">Entrar</button><br>
+</form> <span><?php echo $error; ?></span></li>
 <li>
 <a href="php/registro.php">Crear una cuenta</a></li>
                 </ul>
