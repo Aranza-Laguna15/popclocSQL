@@ -50,7 +50,7 @@
              <input type="password" placeholder="Contraseña" class="form-control" name="contraseña">
             </div>
             <button type="submit" class="btn btn-success" name="submit">Entrar</button><br>
-</form> <span><?php echo $error; ?></span></li>
+</form> </li>
 <li>
 <a href="php/registro.php">Crear una cuenta</a></li>
                 </ul>
