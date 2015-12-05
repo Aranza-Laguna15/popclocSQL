@@ -9,13 +9,13 @@ $username = "popcloc";
     $password = "Manuel_$%&"; 
     $host = "b63ioz7h2m.database.windows.net,1433"; 
     $dbname = "databasepopcloc"; 
-    
+    $tablename="usuarios";
      $correo= $_POST['correo'];
      $contraseña = $_POST['contraseña'];
      $con = new PDO("sqlsrv:server=$host,Database=$dbname", $username, $password);
      $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
 //,':contraseña'=>$contraseña
-     $tsql="SELECT correo FROM usuarios WHERE 'correo' = :correo "; 
+     $tsql="SELECT correo FROM [$tablename] WHERE 'correo' = :correo "; 
      $stmt= $con->prepare($tsql);
      $stmt->execute(array(':correo'=>$correo));
      $user=$stmt->fetch(PDO::FETCH_ASSOC);
