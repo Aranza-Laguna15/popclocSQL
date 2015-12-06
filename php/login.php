@@ -6,7 +6,7 @@ print("Error Correo o contraseña invalidos");
 }else{
 try{
     $username = "popcloc@b63ioz7h2m"; 
-    $password = "Manuel_$%&"; 
+    $password = "l7MkorqZfMw9whohAWeuzQARfKCurakHiASJTv256GkltF2itbBspaqfohks"; 
     $host = "b63ioz7h2m.database.windows.net,1433"; 
     $dbname = "databasepopcloc"; 
     $tablename="usuarios";
