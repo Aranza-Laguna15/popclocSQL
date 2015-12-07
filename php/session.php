@@ -14,8 +14,8 @@ die(print_r($e->getMessage()));
 }
 session_start();
 $user_check=$_SESSION['login_user'];
-$res=$con -> prepare ("SELECT * FROM usuarios WHERE correo= :correo");
-$res -> bindParam(':correo',$user_check);
+$res=$con -> prepare ("SELECT * FROM usuarios WHERE correo= :user_check");
+$res -> bindParam(':user_check',$user_check);
 $res->execute();
 $rows = $res->fetch(PDO::FETCH_ASSOC);
 $login_session=$row['correo'];
