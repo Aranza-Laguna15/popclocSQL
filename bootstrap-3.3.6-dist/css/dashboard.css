@@ -486,3 +486,17 @@ p.ar{
 .hed{
     background-color: #70c6c3;
 }
+.registro{
+    padding-top: 8%;
+    padding-left: 30%;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.btn-enviar{
+    background-color: #70c6c3;
+    color: #fff;
+}
+.perfil{
+    text-align:left;
+    padding-top: 2%;
+    padding-bottom: 1%;
+}

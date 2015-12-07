@@ -93,7 +93,7 @@
                 </div>
                 <div class="col-lg-4">
                     <h3>Visión</h3>
-                    <p></p>
+                    <p>Ser una plataforma reconocida en Latinoamérica por los grandes beneficios que ofrece a los usuarios en el aprendizaje y perfeccionamiento de un idioma, y así crecer implementando la enseñanza de otros idiomas.</p>
                 </div>
             </div>
         </div>
