@@ -161,7 +161,7 @@ include ('session.php');
 					<div class="form-group">
 					    <label for="formGroup">Nombre </label>
 					    <div class="input-group">
-					      <input class="form-control" type="text" id="formGroup"><?php echo $nombreUsuario; ?></input>
+					      <h4><?php echo $nombreUsuario; ?></h4>
 					    <span class="input-group-addon"><span class=""></span></span>
                         </div>
 					  </div>
@@ -170,7 +170,7 @@ include ('session.php');
 					    <label for="formGroup" >Correo electrónico</label>
 					    <div class="input-group ">
 					      <span class="input-group-addon">@</span>
-					      <input class="form-control" type="text" id="formGroup" placeholder=<?php echo $correo; ?>></input>
+					      <input class="form-control" type="text" id="formGroup" placeholder="<?php echo $correo; ?>"></input>
 					      
 					    </div>
 					  </div>
