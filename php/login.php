@@ -19,17 +19,13 @@ print( "Error connecting to SQL Server.\n" );
 die(print_r($e->getMessage()));
 }
 //,':contraseña'=>$contraseña
-$res = $con ->prepare("SELECT * FROM usuarios WHERE correo = :correo ");
+$res = $con ->prepare("SELECT * FROM usuarios WHERE correo = :correo AND contraseña = :contraseña");
 $res -> bindParam(':correo',$correo);
+$res -> bindParam(':contraseña',$contraseña);
 $res->execute();
 $rows = $res->fetch(PDO::FETCH_NUM);
-     //$tsql="SELECT correo FROM [$tablename] WHERE 'correo' = :correo "; 
-     //$stmt= $con->prepare($tsql);
-     //$stmt->execute(array(':correo'=>$correo));
-     //$user=$stmt->fetch(PDO::FETCH_ASSOC);$stmt->rowCount()
      if( $rows > 0){
    header('Location: intro-page.html');
-   
 }else{
    header('Location: error.html');
     die(print_r( sqlsrv_errors(), true));
