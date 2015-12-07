@@ -1,20 +1,23 @@
 <?php
 session_start();
+    $username = "popcloc@b63ioz7h2m"; 
+    $password = "Manuel_$%&"; 
+    $host = "b63ioz7h2m.database.windows.net,1433"; 
+    $dbname = "databasepopcloc";
+    $correo= $_POST['correo'];
+    $contraseña = $_POST['contraseña'];
 if(isset($_POST['submit'])){
 if(empty($_POST['correo']) || empty($_POST['contraseña'])){
 print("Error Correo o contraseña invalidos");
 }else{
 try{
-    $username = "popcloc@b63ioz7h2m"; 
-    $password = "l7MkorqZfMw9whohAWeuzQARfKCurakHiASJTv256GkltF2itbBspaqfohks"; 
-    $host = "b63ioz7h2m.database.windows.net,1433"; 
-    $dbname = "databasepopcloc"; 
-    $tablename="usuarios";
-     $correo= $_POST['correo'];
-     $contraseña = $_POST['contraseña'];
-     
-     $con = new PDO("sqlsrv:server=$host,Database=$dbname", $username, $password);
+    $con = new PDO("sqlsrv:server=$host;Database=$dbname", $username, $password);
      $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
+
+}catch( PDOException $e ) {
+print( "Error connecting to SQL Server.\n" );
+die(print_r($e->getMessage()));
+}
 //,':contraseña'=>$contraseña
 $res = $con ->prepare("SELECT * FROM usuarios WHERE correo = :correo ");
 $res -> bindParam(':correo',$correo);
@@ -30,10 +33,6 @@ $rows = $res->fetch(PDO::FETCH_NUM);
 }else{
    header('Location: error.html');
     die(print_r( sqlsrv_errors(), true));
-}
-}catch( PDOException $e ) {
-print( "Error connecting to SQL Server.\n" );
-die(print_r($e->getMessage()));
 }
 }
  }
