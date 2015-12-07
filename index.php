@@ -1,3 +1,9 @@
+<?php
+include('login.php');
+if(isset($_SESSION['login_user'])){
+    header("Location: php/intro-page.php")
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,7 +48,7 @@
                     
                     <li class="page-scroll">
 
-             <form class="navbar-form navbar-right" action="php/login.php" method="post">
+             <form class="navbar-form navbar-right" action="" method="post">
             <div class="form-group">
             <input type="text" placeholder="Correo" class="form-control" name="correo">
             </div>
