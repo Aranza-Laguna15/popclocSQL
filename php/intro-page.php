@@ -153,7 +153,7 @@ include ('session.php');
 				<div class="form-group">
 					    <label for="formGroup">Clave de Usuario</label>
 					    <div class="input-group">
-					      <input class="form-control" type="text" id="formGroup" disabled><?php echo $clave; ?></input>
+					      <input class="form-control" type="text" id="formGroup" placeholder='<?php echo $clave; ?>' disabled></input>
                           <span class="help-block">Esta clave está oculta para los demás usuarios. Lo utilizamos para identificarte.</span>
 					    </div>
 					  </div>
