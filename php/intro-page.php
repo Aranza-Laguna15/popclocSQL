@@ -1,3 +1,6 @@
+<?php
+include ('session.php');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,8 +44,8 @@
 
                         <li class="page-scroll">
                             <form class="navbar-form navbar-right">
-                                <p class="ar">Usuario, user </p>
-                                <a href="#">Salir</a>
+                                <p class="ar"><?php echo $login_session; ?></p>
+                                <a href="logout.php">Salir</a>
                             </form>
                         </li>
                 </ul>
