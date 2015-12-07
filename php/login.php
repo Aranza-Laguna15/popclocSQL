@@ -25,7 +25,7 @@ $res -> bindParam(':contrasena',$contrasena);
 $res->execute();
 $rows = $res->fetch(PDO::FETCH_NUM);
      if( $rows > 0){
-   header('Location: intro-page.html');
+   header('Location: intro-page.php');
 }else{
    header('Location: error.html');
     die(print_r( sqlsrv_errors(), true));
