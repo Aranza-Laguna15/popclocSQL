@@ -161,7 +161,7 @@ include ('session.php');
 					<div class="form-group">
 					    <label for="formGroup">Nombre </label>
 					    <div class="input-group">
-					      <h4><?php echo $nombreUsuario; ?></h4>
+					      <input class="form-control" type="text" id="formGroup" placeholder='<?php echo $nombreUsuario; ?>' disabled>
 					    <span class="input-group-addon"><span class=""></span></span>
                         </div>
 					  </div>
@@ -170,7 +170,7 @@ include ('session.php');
 					    <label for="formGroup" >Correo electrónico</label>
 					    <div class="input-group ">
 					      <span class="input-group-addon">@</span>
-					      <input class="form-control" type="text" id="formGroup" placeholder="<?php echo $correo; ?>"></input>
+					      <input class="form-control" type="text" id="formGroup" placeholder='<?php echo $correo; ?>'></input>
 					      
 					    </div>
 					  </div>
@@ -178,7 +178,7 @@ include ('session.php');
 					<div class="form-group">
 					    <label for="formGroup">Sexo</label>
 					    <div class="input-group">
-					       <input class="form-control" type="text" id="formGroup" disabled> <?php echo $sexo; ?></input>
+					       <input class="form-control" type="text" id="formGroup" placeholder= '<?php echo $sexo; ?>' disabled></input>
 					    </div>
 					  </div>
 						<br />
@@ -186,7 +186,7 @@ include ('session.php');
 						<div class="form-group">
 					    <label for="formGroup">Edad</label>
 					    <div class="input-group">
-					    <input class="form-control" type="text" id="formGroup" disabled> <?php echo $edad; ?></input>
+					    <input class="form-control" type="text" id="formGroup" placeholder='<?php echo $edad; ?>' disabled> </input>
 					    </div>
 					  </div>
 		</form>	</section>
