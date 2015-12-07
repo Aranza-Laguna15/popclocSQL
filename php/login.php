@@ -5,7 +5,7 @@ session_start();
     $host = "b63ioz7h2m.database.windows.net,1433"; 
     $dbname = "databasepopcloc";
     $correo= $_POST['correo'];
-    $contraseña = $_POST['contraseña'];
+    $contrasena = $_POST['contraseña'];
 if(isset($_POST['submit'])){
 if(empty($_POST['correo']) || empty($_POST['contraseña'])){
 print("Error Correo o contraseña invalidos");
@@ -19,9 +19,9 @@ print( "Error connecting to SQL Server.\n" );
 die(print_r($e->getMessage()));
 }
 //,':contraseña'=>$contraseña
-$res = $con ->prepare("SELECT * FROM usuarios WHERE correo = :correo AND contraseña = :contraseña");
+$res = $con ->prepare("SELECT * FROM usuarios WHERE correo = :correo AND contrasena = :contrasena");
 $res -> bindParam(':correo',$correo);
-$res -> bindParam(':contraseña',$contraseña);
+$res -> bindParam(':contrasena',$contrasena);
 $res->execute();
 $rows = $res->fetch(PDO::FETCH_NUM);
      if( $rows > 0){
