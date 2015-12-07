@@ -8,13 +8,16 @@
 
 session_start();
 $user_check=$_SESSION['login_user'];
-$res=$con -> prepare ("SELECT correo FROM usuarios WHERE correo= :user_check");
+$res=$con -> prepare ("SELECT * FROM usuarios WHERE correo= :user_check");
 $res -> bindParam(':user_check',$user_check);
 $res->execute();
 $rows = $res->fetch(PDO::FETCH_ASSOC);
 $login_session=$rows['correo'];
 $user_id=$rows['id'];
 $contrasena=$rows['contrasena'];
+$nombreUsuario=$rows['nombreusuario'];
+$edad=$rows['edad'];
+$sexo=$rows['sexo'];
 if(!isset($login_session))
         {
             $con = null; 
