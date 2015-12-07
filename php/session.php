@@ -13,7 +13,7 @@ print( "Error connecting to SQL Server.\n" );
 die(print_r($e->getMessage()));
 }
 session_start();
-$user_check=$_SESSION['login_user'];
+$user_check=$_SESSION['correo'];
 $res=$con -> prepare ("SELECT * FROM usuarios WHERE correo= :correo");
 $res -> bindParam(':correo',$user_check);
 $res->execute();
