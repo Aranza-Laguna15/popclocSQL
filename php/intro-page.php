@@ -151,17 +151,17 @@ include ('session.php');
 		<section class="perfil"><form role="form">
  
 				<div class="form-group">
-					    <label for="formGroup">Nombre de Usuario</label>
+					    <label for="formGroup">Clave de Usuario</label>
 					    <div class="input-group">
-					      <input class="form-control" type="text" id="formGroup" value="usuario@usuario" disabled>
-                          <span class="help-block">Este nombre está oculto para los demás usuarios.</span>
+					      <input class="form-control" type="text" id="formGroup" disabled><?php echo $clave; ?></input>
+                          <span class="help-block">Esta clave está oculta para los demás usuarios. Lo utilizamos para identificarte.</span>
 					    </div>
 					  </div>
  
 					<div class="form-group">
 					    <label for="formGroup">Nombre </label>
 					    <div class="input-group">
-					      <input class="form-control" type="text" id="formGroup" placeholder="usuario">
+					      <input class="form-control" type="text" id="formGroup"><?php echo $nombreUsuario; ?></input>
 					    <span class="input-group-addon"><span class=""></span></span>
                         </div>
 					  </div>
@@ -170,7 +170,7 @@ include ('session.php');
 					    <label for="formGroup" >Correo electrónico</label>
 					    <div class="input-group ">
 					      <span class="input-group-addon">@</span>
-					      <input class="form-control" type="text" id="formGroup">
+					      <input class="form-control" type="text" id="formGroup"><?php echo $contrasena; ?></input>
 					      
 					    </div>
 					  </div>
@@ -178,14 +178,15 @@ include ('session.php');
 					<div class="form-group">
 					    <label for="formGroup">Sexo</label>
 					    <div class="input-group">
-					       <input class="form-control" type="text" id="formGroup" value="sexo" disabled>
+					       <input class="form-control" type="text" id="formGroup" disabled> <?php echo $sexo; ?></input>
 					    </div>
 					  </div>
 						<br />
  
 						<div class="form-group">
-					    <label class="col-sm-2 control-label" for="formGroup"></label>
+					    <label for="formGroup">Edad</label>
 					    <div class="input-group">
+					    <input class="form-control" type="text" id="formGroup" disabled> <?php echo $edad; ?></input>
 					    </div>
 					  </div>
 		</form>	</section>
