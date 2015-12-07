@@ -14,6 +14,7 @@ $res->execute();
 $rows = $res->fetch(PDO::FETCH_ASSOC);
 $login_session=$rows['correo'];
 $user_id=$rows['id'];
+$clave=$rows['claveusuario'];
 $contrasena=$rows['contrasena'];
 $nombreUsuario=$rows['nombreusuario'];
 $edad=$rows['edad'];
