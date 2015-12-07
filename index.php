@@ -1,7 +1,8 @@
 <?php
-include('login.php');
+include('login.php'); // Includes Login Script
+
 if(isset($_SESSION['login_user'])){
-    header("Location: php/intro-page.php")
+header("location: php/intro-page.php");
 }
 ?>
 <!DOCTYPE html>
