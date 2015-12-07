@@ -12,14 +12,19 @@ try{
     $tablename="usuarios";
      $correo= $_POST['correo'];
      $contraseña = $_POST['contraseña'];
+     
      $con = new PDO("sqlsrv:server=$host,Database=$dbname", $username, $password);
      $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
 //,':contraseña'=>$contraseña
-     $tsql="SELECT correo FROM [$tablename] WHERE 'correo' = :correo "; 
-     $stmt= $con->prepare($tsql);
-     $stmt->execute(array(':correo'=>$correo));
-     $user=$stmt->fetch(PDO::FETCH_ASSOC);
-     if($stmt->rowCount() > 0){
+$res = $con ->prepare("SELECT * FROM usuarios WHERE correo = :correo ");
+$res -> bindParam(':correo',$correo);
+$res->execute();
+$rows = $res->fetch(PDO::FETCH_NUM);
+     //$tsql="SELECT correo FROM [$tablename] WHERE 'correo' = :correo "; 
+     //$stmt= $con->prepare($tsql);
+     //$stmt->execute(array(':correo'=>$correo));
+     //$user=$stmt->fetch(PDO::FETCH_ASSOC);$stmt->rowCount()
+     if( $rows > 0){
    header('Location: intro-page.html');
    
 }else{
