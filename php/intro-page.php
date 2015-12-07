@@ -170,7 +170,7 @@ include ('session.php');
 					    <label for="formGroup" >Correo electrónico</label>
 					    <div class="input-group ">
 					      <span class="input-group-addon">@</span>
-					      <input class="form-control" type="text" id="formGroup" placeholder='<?php echo $correo; ?>'></input>
+					      <input class="form-control" type="text" id="formGroup" placeholder='<?php echo $login_session; ?>' disabled>
 					      
 					    </div>
 					  </div>
