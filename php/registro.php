@@ -1,3 +1,6 @@
+<?php
+include('registrer.php'); // Includes Login Script
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -55,7 +58,7 @@
         <div class="container">
             <div class="row">
                 <h2>¡Registrate ahora!</h2>
-                <form role="form" action="registrer.php" method="POST">
+                <form accept-charset="UTF-8" role="form" action="registrer.php" method="POST">
                     <div class="col-lg-6">
                         <br>
                         <div class="form-group">
@@ -68,7 +71,7 @@
                         <div class="form-group">
                             <label for="InputEmail">Correo</label>
                             <div class="input-group">
-                                <input type="email" class="form-control" name="correo" placeholder="Correo electronico" required>
+                                <input type="text" class="form-control" name="correo" placeholder="Correo electronico" required>
                                 <span class="input-group-addon"><span class=""></span></span>
                             </div>
                         </div>
