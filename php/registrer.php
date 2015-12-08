@@ -20,7 +20,7 @@ if(isset($_POST['submit'])){
   $res -> bindParam(':sexo',$_POST['sexo'],PDO::PARAM_STR);  
   $res -> bindParam(':edad',$_POST['edad'],PDO::PARAM_INT);
   $res -> execute();
-  print("Consulta ".$res);
+  echo $res;
     }catch (PDOException $ex) {
     print( "Error al insertar usuario: " );
     die(print_r($e->getMessage()));
