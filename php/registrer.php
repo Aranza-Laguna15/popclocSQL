@@ -23,6 +23,7 @@ if(isset($_POST['submit'])){
   $res -> bindParam(':sexo',$sexo,PDO::PARAM_STR);  
   $res -> bindParam(':edad',$edad,PDO::PARAM_INT);
   $res -> execute();
-  header('Location: ../index.php'); 
+  print($nombreusuario, $correo, $sexo, $edad, $contrasena, $clave);
+  //header('Location: ../index.php'); 
 }
 ?>
