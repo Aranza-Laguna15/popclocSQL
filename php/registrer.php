@@ -5,8 +5,35 @@
     $dbname = "databasepopcloc";
  
     $con = new PDO("sqlsrv:server=$host;Database=$dbname", $username, $password);
+    
 session_start();
-$user_check=$_SESSION['login_user'];
-$res=$con -> prepare ("SELECT * FROM usuarios WHERE correo= :user_check");
-$res -> bindParam(':user_check',$user_check);
+$nombreusuario=$_POST['nombre'];
+$correo=$_POST['correo'];
+$sexo=$_POST['sexo'];
+$edad=$_POST['edad'];
+$errorcamp="";
+$contrasena=$_POST['contrasena'];
+$clave="PopClocUser"+srand(time());;
+
+if(isset($_POST['submit'])){
+if(empty($_POST['correo']) || empty($_POST['contraseña']) || empty($_POST['nombre']) || empty($_POST['sexo'])){
+  $errorcamp="Llena todos los campos."
+}else{
+    try{
+  $res=$con -> prepare ("INSERT INTO usuarios (claveusuario,nombreusuario,correo,contrasena,sexo,edad) VALUES (:clave, :nombreusuario, :correo, :contrasena, :sexo, :edad)");
+  $res -> bindParam(':claveusuario',$clave);  
+  $res -> bindParam(':nombreusuario',$nombreusuario);  
+  $res -> bindParam(':correo',$correo);  
+  $res -> bindParam(':contrasena',$contrasena);  
+  $res -> bindParam(':sexo',$sexo);  
+  $res -> bindParam(':edad',$edad);
+  $res->execute();
+  header('Location: intro-page.php');
+  $message="Usuario registrado. Inicia sesión.";
+    }catch( PDOException $e ) {
+print( "Error insert into database: " );
+die(print_r($e->getMessage()));
+}
+}
+}
 ?>
