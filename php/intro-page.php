@@ -181,8 +181,6 @@ include ('session.php');
 					       <input class="form-control" type="text" id="formGroup" placeholder= '<?php echo $sexo; ?>' disabled></input>
 					    </div>
 					  </div>
-						<br />
- 
 						<div class="form-group">
 					    <label for="formGroup">Edad</label>
 					    <div class="input-group">
