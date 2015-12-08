@@ -10,16 +10,20 @@ $username = "popcloc@b63ioz7h2m";
 print( "Error connecting to SQL Server.\n" );
 die(print_r($e->getMessage()));
 }
-$res = $con ->prepare("SELECT * FROM usuarios WHERE correo = :correo AND contrasena = :contrasena");
+$res = $con ->prepare("SELECT * FROM usuarios");
 $rows = $res->fetch(PDO::FETCH_ASSOC);
 $row=$res->fetch(PDO::FETCH_NUM);
-$login_session=$rows['correo'];
+$correo=$rows['correo'];
 $user_id=$rows['id'];
 $clave=$rows['claveusuario'];
 $contrasena=$rows['contrasena'];
 $nombreUsuario=$rows['nombreusuario'];
 $edad=$rows['edad'];
 $sexo=$rows['sexo'];
+$connection= array("username"=>$username,"password"=>$password, "host"=>$host, "dbname"=>$dbname);
+print_r(json_encode($connection));
 for($i=0;$i<=$row;$i++){
+    $users= array("id"=>$user_id, "claveusuario"=>$clave,"nombreusuario"=>$nombreUsuario, "correo"=>$correo, "contrasena"=>$contrasena, "sexo"=>$sexo, "edad"=>$edad);
+    print_r(json_encode($users));
 }
 ?>
