@@ -20,11 +20,11 @@ if(isset($_POST['submit'])){
   $res -> bindParam(':sexo',$_POST['sexo'],PDO::PARAM_STR);  
   $res -> bindParam(':edad',$_POST['edad'],PDO::PARAM_INT);
   $res -> execute();
-  echo "cconsulta: ".$res;
+  header('Location: error.php'); 
     }catch (PDOException $ex) {
     print( "Error al insertar usuario: " );
     die(print_r($e->getMessage()));
     }
-    //header('Location: ../index.php'); 
+    //
 }
 ?>
