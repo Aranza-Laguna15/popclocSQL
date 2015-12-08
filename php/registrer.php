@@ -21,6 +21,7 @@ if(isset($_POST['submit'])){
   $res -> bindParam(':contrasena',$_POST['contrasena'],PDO::PARAM_STR);  
   $res -> bindParam(':sexo',$_POST['sexo'],PDO::PARAM_STR);  
   $res -> bindParam(':edad',$_POST['edad'],PDO::PARAM_INT);
+  $exec=$res -> execute();
   $res -> execute();
   header('Location: error.php'); 
     }catch (PDOException $ex) {
