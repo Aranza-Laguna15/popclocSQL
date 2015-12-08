@@ -12,7 +12,7 @@ session_start();
 $clave='PopClocUser';
 $query="INSERT INTO usuarios (claveusuario,nombreusuario,correo,contrasena,sexo,edad) VALUES (:claveusuario, :nombreusuario, :correo, :contrasena, :sexo, :edad)";
 
-//if(isset($_POST['submit'])){
+if(isset($_POST['submit'])){
     try{
   $res=$con -> prepare ($query);
   $res -> bindParam(':claveusuario',$clave,PDO::PARAM_STR);  
@@ -28,5 +28,5 @@ $query="INSERT INTO usuarios (claveusuario,nombreusuario,correo,contrasena,sexo,
     die(print_r($e->getMessage()));
     }
     //
-//}
+}
 ?>
