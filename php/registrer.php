@@ -7,6 +7,7 @@
     
     $con = new PDO("sqlsrv:server=$host;Database=$dbname", $username, $password);
  
+session_start();
 $nombreusuario=$_POST['nombre'];
 $correo=$_POST['correo'];
 $sexo=$_POST['sexo'];
@@ -23,7 +24,6 @@ if(isset($_POST['submit'])){
   $res -> bindParam(':sexo',$sexo,PDO::PARAM_STR);  
   $res -> bindParam(':edad',$edad,PDO::PARAM_INT);
   $res -> execute();
-  print($nombreusuario, $correo, $sexo, $edad, $contrasena, $clave);
-  //header('Location: ../index.php'); 
+  header('Location: ../index.php'); 
 }
 ?>
