@@ -10,20 +10,13 @@ $username = "popcloc@b63ioz7h2m";
 print( "Error connecting to SQL Server.\n" );
 die(print_r($e->getMessage()));
 }
-$res = $con ->prepare("SELECT * FROM usuarios");
-$rows = $res->fetch(PDO::FETCH_ASSOC);
-$row=$res->fetch(PDO::FETCH_NUM);
-$correo=$rows['correo'];
-$user_id=$rows['id'];
-$clave=$rows['claveusuario'];
-$contrasena=$rows['contrasena'];
-$nombreUsuario=$rows['nombreusuario'];
-$edad=$rows['edad'];
-$sexo=$rows['sexo'];
+$res = $con ->query("SELECT * FROM usuarios");
 $connection= array("username"=>$username,"password"=>$password, "host"=>$host, "dbname"=>$dbname);
 print_r(json_encode($connection));
-for($i=0;$i<=$row;$i++){
-    $users= array("id"=>$user_id, "claveusuario"=>$clave,"nombreusuario"=>$nombreUsuario, "correo"=>$correo, "contrasena"=>$contrasena, "sexo"=>$sexo, "edad"=>$edad);
-    print_r(json_encode($users));
+foreach($res as $registro){
+     $users= array("id"=>$registro[0], "claveusuario"=>$registro[1],"nombreusuario"=>$registro[2], "correo"=>$registro[3], "contrasena"=>$registro[4], "sexo"=>$registro[5], "edad"=>$registro[6]);
+    print_r(json_encode($users)); 
+}
+   
 }
 ?>
