@@ -11,8 +11,6 @@ print( "Error connecting to SQL Server.\n" );
 die(print_r($e->getMessage()));
 }
 $res = $con ->query("SELECT * FROM usuarios");
-$connection= array("username"=>$username,"password"=>$password, "host"=>$host, "dbname"=>$dbname);
-print_r(json_encode($connection));
 foreach($res as $registro){
      $users= array("id"=>$registro[0], "claveusuario"=>$registro[1],"nombreusuario"=>$registro[2], "correo"=>$registro[3], "contrasena"=>$registro[4], "sexo"=>$registro[5], "edad"=>$registro[6]);
     print_r(json_encode($users)); 
