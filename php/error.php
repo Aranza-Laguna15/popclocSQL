@@ -1,3 +1,6 @@
+<?php
+include('registrer.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +30,7 @@
   </h1>  
     
 </div>
-
+<h1>Consulta: <?php echo $res; ?></h1>
 <h3 class="text-center"><a href="../index.php">Regresar </a></h3>
      <!-- Bootstrap Core JavaScript -->
      <script src="../bootstrap-3.3.6-dist/libs/jquery-1.11.3.min.js"></script>
