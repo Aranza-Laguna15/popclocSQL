@@ -15,7 +15,7 @@ $contrasena=$_POST['contrasena'];
 $clave="PopClocUser";
 if(isset($_POST['submit'])){
     
-  $res=$con -> prepare ("INSERT INTO usuarios (claveusuario,nombreusuario,correo,contrasena,sexo,edad) VALUES (:clave, :nombreusuario, :correo, :contrasena, :sexo, :edad)");
+  $res=$con -> prepare ("INSERT INTO usuarios (claveusuario,nombreusuario,correo,contrasena,sexo,edad) VALUES (:claveusuario, :nombreusuario, :correo, :contrasena, :sexo, :edad)");
   $res -> bindParam(':claveusuario',$clave,PDO::PARAM_STR);  
   $res -> bindParam(':nombreusuario',$nombreusuario,PDO::PARAM_STR);  
   $res -> bindParam(':correo',$correo,PDO::PARAM_STR);  
