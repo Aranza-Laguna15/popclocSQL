@@ -1,6 +1,5 @@
 <?php
 include('php/login.php'); // Includes Login Script
-include('php/registrer.php');
 if(isset($_SESSION['login_user'])){
 header("location: php/intro-page.php");
 }
@@ -66,7 +65,6 @@ header("location: php/intro-page.php");
         </div>
         <!-- /.container-fluid -->
     </nav>
-<h4><?php echo $message; ?></h4>
     <!-- Header -->
     <header>
         <div class="container">
