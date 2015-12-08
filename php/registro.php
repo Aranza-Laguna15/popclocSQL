@@ -55,27 +55,27 @@
         <div class="container">
             <div class="row">
                 <h2>¡Registrate ahora!</h2>
-                <form role="form" action="registrer.php" method="post">
+                <form role="form" action="registrer.php" method="POST">
                     <div class="col-lg-6">
                         <br>
                         <div class="form-group">
                             <label for="InputName">Nombre</label>
                             <div class="input-group">
-                                <input type="text" class='form-control <?php echo $err; ?>' name="nombre" placeholder="Nombre" required>
+                                <input type="text" class="form-control" name="nombre" placeholder="Nombre" required>
                                 <span class="input-group-addon"><span class=""></span></span>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="InputEmail">Correo</label>
                             <div class="input-group">
-                                <input type="email" class='form-control <?php echo $err; ?>' name="correo" placeholder="Correo electronico" required>
+                                <input type="email" class="form-control" name="correo" placeholder="Correo electronico" required>
                                 <span class="input-group-addon"><span class=""></span></span>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="InputPassword">Contraseña</label>
                             <div class="input-group">
-                                <input type="password" class='form-control <?php echo $err; ?>' name="contrasena" placeholder="Contraseña" required>
+                                <input type="password" class="form-control" name="contrasena" placeholder="Contraseña" required>
                                 <span class="input-group-addon"><span class=""></span></span>
                             </div>
                         </div>
@@ -97,7 +97,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class='form-control <?php echo $err; ?>'>
+                        <div class="form-group">
                         <label for="InputSex">Sexo</label>
                         <div class="radio">
                         <label>
