@@ -9,7 +9,7 @@
  
 session_start();
 
-$clave="PopClocUser";
+$clave='PopClocUser';
 if(isset($_POST['submit'])){
     try{
   $res=$con -> prepare ("INSERT INTO usuarios (claveusuario,nombreusuario,correo,contrasena,sexo,edad) VALUES (:claveusuario, :nombreusuario, :correo, :contrasena, :sexo, :edad)");
@@ -22,8 +22,8 @@ if(isset($_POST['submit'])){
   $res -> execute();
   
     }catch (PDOException $ex) {
-        print( "Error al insertar usuario: " );
-die(print_r($e->getMessage()));
+    print( "Error al insertar usuario: " );
+    die(print_r($e->getMessage()));
     }
     header('Location: ../index.php'); 
 }
