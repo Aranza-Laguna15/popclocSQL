@@ -20,20 +20,15 @@ $clave="PopClocUser"+srand(time());;
 if(isset($_POST['submit'])){
 try{
   $res=$con -> prepare ("INSERT INTO usuarios (claveusuario,nombreusuario,correo,contrasena,sexo,edad) VALUES (:clave , :nombreusuario , :correo , :contrasena , :sexo , :edad)");
-  /*$res -> bindParam(':claveusuario',$clave);  
+  $res -> bindParam(':claveusuario',$clave);  
   $res -> bindParam(':nombreusuario',$nombreusuario);  
   $res -> bindParam(':correo',$correo);  
   $res -> bindParam(':contrasena',$contrasena);  
   $res -> bindParam(':sexo',$sexo);  
-  $res -> bindParam(':edad',$edad,PDO::PARAM_INT);*/
-  $rows=$res->execute(array(':claveusuario'=>$clave, ':nombreusuario'=>$nombreusuario,
-  ':correo'=>$correo, ':contrasena'=>$contrasena, ':sexo'=>$sexo,':edad'=>$edad));
-  if($rows == 1){
+  $res -> bindParam(':edad',$edad,PDO::PARAM_INT);
+  $res->execute();
      alert('Usuario registrado, inicia sesión');
   header('Location: ../index.php'); 
-  }else{
-     header('Location: error.php');  
-  }
     }catch( PDOException $e ) {
 print( "Error insert into database: " );
 die(print_r($e->getMessage()));
