@@ -11,14 +11,11 @@ $nombreusuario=$_POST['nombre'];
 $correo=$_POST['correo'];
 $sexo=$_POST['sexo'];
 $edad=$_POST['edad'];
-$errorcamp="";
 $contrasena=$_POST['contrasena'];
 $clave="PopClocUser"+srand(time());;
-$err="";
 if(isset($_POST['submit'])){
 if(empty($_POST['correo']) || empty($_POST['contrasena']) || empty($_POST['nombre']) || empty($_POST['sexo'])){
-  $errorcamp="Llena todos los campos."
-  $err="has-error";
+  print( "Error complete los campos" );
 }else{
     try{
   $res=$con -> prepare ("INSERT INTO usuarios (claveusuario,nombreusuario,correo,contrasena,sexo,edad) VALUES (:clave, :nombreusuario, :correo, :contrasena, :sexo, :edad)");
