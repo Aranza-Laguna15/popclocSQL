@@ -26,11 +26,10 @@ if(isset($_POST['submit'])){
   $stmt=$con -> prepare ($query);
   $result=$stmt -> execute($users_array);
   
-  header('Location: error.php'); 
+  header('Location: ../index.php'); 
     }catch (PDOException $ex) {
     print( "Error al insertar usuario: " );
     die(print_r($e->getMessage()));
     }
-    //
 }
 ?>
