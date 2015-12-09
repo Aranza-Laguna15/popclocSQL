@@ -7,6 +7,7 @@
      $con = new PDO("sqlsrv:server=$host;Database=$dbname", $username, $password);
      
    // $users_array=array(':claveusuario'=>$clave, ':nombreusuario'=>$_POST['nombre'], ':correo'=>$_POST['correo'],':contrasena'=>$_POST['contrasena'],':sexo'=>$_POST['sexo'], ':edad'=>$_POST['edad']);
+session_start();
 $claveusuario='PopClocUser002';
 $nombreusuario='Aranza Laguna';
 $correo='aranzzita@gmail.com';
