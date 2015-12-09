@@ -4,18 +4,18 @@
     $host = "b63ioz7h2m.database.windows.net,1433"; 
     $dbname = "databasepopcloc";
     
-$claveusuario='PopClocUser002';
+/*$claveusuario='PopClocUser002';
 $nombreusuario='Aranza Laguna';
 $correo='aranzzita@gmail.com';
 $contrasena='aranza';
 $sexo='Femenino';
-$edad='19';
+$edad='19';*/
 if(isset($_POST['submit'])){
     try{
         $con = new PDO("sqlsrv:server=$host;Database=$dbname", $username, $password);
         $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $sql="INSERT INTO usuarios (claveusuario,nombreusuario,correo,contrasena,sexo,edad) VALUES ('PopClocUser002', 'Aranza Laguna', 'aranzzita@gmail.com', 'aranza', 'Femenino', '19')";
-        $con -> execute($sql);
+        $con -> exec($sql);
     
        header('Location: error.php');  
    
