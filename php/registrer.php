@@ -20,7 +20,7 @@ if(isset($_POST['submit'])){
     $sql -> bindParam(':contrasena',$_POST['contrasena'],PDO::PARAM_STR);  
     $sql -> bindParam(':sexo',$_POST['sexo'],PDO::PARAM_STR);  
     $sql -> bindParam(':edad',$_POST['edad'],PDO::PARAM_STR);
-    $result=$sql -> execute($users_array);
+    $result=$sql -> execute();
     if($result){
        header('Location: error.php');  
     }else{
