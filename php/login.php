@@ -6,7 +6,9 @@ session_start();
     $dbname = "databasepopcloc";
     $correo= $_POST['correo'];
     $contrasena = $_POST['contraseña'];
+    $active=false;
 if(isset($_POST['submit'])){
+    $active=true;
 if(empty($_POST['correo']) || empty($_POST['contraseña'])){
 print("Error Correo o contraseña invalidos");
 }else{
