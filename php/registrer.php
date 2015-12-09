@@ -8,11 +8,19 @@ if(isset($_POST['submit'])){
     try{
         $con = new PDO("sqlsrv:server=$host;Database=$dbname", $username, $password);
         $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $claveusuario='PopClocUser'.rand();
         $newID=$con->lastInsertId();
         $newID++;
-        $sql="INSERT INTO usuarios (id,claveusuario,nombreusuario,correo,contrasena,sexo,edad) VALUES ('$newID','$claveusuario', '$_POST['nombre']', '$_POST['correo']', '$_POST['contrasena']', '$_POST['sexo']', '$_POST['edad']')";
-        $con -> exec($sql);
+        $claveusuario='PopClocUser'.$newID;
+        $sql="INSERT INTO usuarios (id,claveusuario,nombreusuario,correo,contrasena,sexo,edad) VALUES (:newID, :claveusuario, :nombreusuario, :correo, :contrasena, :sexo, :edad)";
+        $consulta=$con->prepare($sql);
+        $consulta -> bindParam(':newID',$newID,PDO::PARAM_STR);
+        $consulta -> bindParam(':claveusuario',$claveusuario,PDO::PARAM_STR);  
+        $consulta -> bindParam(':nombreusuario',$_POST['nombre'],PDO::PARAM_STR);  
+        $consulta -> bindParam(':correo',$_POST['correo'],PDO::PARAM_STR);  
+        $consulta -> bindParam(':contrasena',$_POST['contrasena'],PDO::PARAM_STR);  
+        $consulta -> bindParam(':sexo',$_POST['sexo'],PDO::PARAM_STR);  
+        $consulta -> bindParam(':edad',$_POST['edad'],PDO::PARAM_STR);
+        $consulta -> exec();
         
        header('Location: error.php');  
    
