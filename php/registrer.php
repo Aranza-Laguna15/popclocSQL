@@ -14,9 +14,9 @@ if(isset($_POST['submit'])){
     try{
         $con = new PDO("sqlsrv:server=$host;Database=$dbname", $username, $password);
         $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql="INSERT INTO usuarios (claveusuario,nombreusuario,correo,contrasena,sexo,edad) VALUES ('PopClocUser002', 'Aranza Laguna', 'aranzzita@gmail.com', 'aranza', 'Femenino', '19')";
+        $sql="INSERT INTO usuarios (id,claveusuario,nombreusuario,correo,contrasena,sexo,edad) VALUES ('2','PopClocUser002', 'Aranza Laguna', 'aranzzita@gmail.com', 'aranza', 'Femenino', '19')";
         $con -> exec($sql);
-    
+        $newID=$con->lastInsertId();
        header('Location: error.php');  
    
 }catch(PDOException $e)
