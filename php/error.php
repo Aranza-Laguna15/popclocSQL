@@ -30,9 +30,10 @@ include('registrer.php');
   </h1>  
     
 </div>
-<h1>Result: <?php echo $result; ?></h1>
-<h1>SQL: <?php echo $sql; ?></h1>
-<h1>consulta: <?php echo $consulta; ?></h1>
+<h1>sexo: <?php echo $sexo; ?></h1>
+<h1>edad: <?php echo $edad; ?></h1>
+<h1>id: <?php echo $newID; ?></h1>
+<h1>clave: <?php echo $claveusuario; ?></h1>
 <h3 class="text-center"><a href="../index.php">Regresar </a></h3>
      <!-- Bootstrap Core JavaScript -->
      <script src="../bootstrap-3.3.6-dist/libs/jquery-1.11.3.min.js"></script>
