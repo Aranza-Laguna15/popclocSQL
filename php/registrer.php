@@ -4,11 +4,9 @@ session_start();
     $password = "Manuel_$%&"; 
     $host = "b63ioz7h2m.database.windows.net,1433"; 
     $dbname = "databasepopcloc";
+    $users_array=array(':claveusuario'=>$clave, ':nombreusuario'=>$_POST['nombre'], ':correo'=>$_POST['correo'],':contrasena'=>$_POST['contrasena'],':sexo'=>$_POST['sexo'], ':edad'=>$_POST['edad']);
+$clave='PopClocUser002';
 $query="INSERT INTO usuarios (claveusuario,nombreusuario,correo,contrasena,sexo,edad) VALUES (:claveusuario, :nombreusuario, :correo, :contrasena, :sexo, :edad)";
-$clave='PopClocUser';
-$users_array=array(':claveusuario'=>$clave, ':nombreusuario'=>$_POST['nombre'],
-':correo'=>$_POST['correo'],':contrasena'=>$_POST['contrasena'],':sexo'=>$_POST['sexo'],
-':edad'=>$_POST['edad']);
 
 if(isset($_POST['submit'])){
     try{
