@@ -24,7 +24,7 @@ $res -> bindParam(':correo',$correo);
 $res -> bindParam(':contrasena',$contrasena);
 $res->execute();
 $rows = $res->fetch(PDO::FETCH_NUM);
-     if( $rows > 0){
+     if( $rows > 0){ 
          $_SESSION['login_user']=$correo;
          $login_ok=true;
    header('Location: intro-page.php');
