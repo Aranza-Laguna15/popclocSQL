@@ -4,17 +4,12 @@
     $host = "b63ioz7h2m.database.windows.net,1433"; 
     $dbname = "databasepopcloc";
     
-/*$claveusuario='PopClocUser002';
-$nombreusuario='Aranza Laguna';
-$correo='aranzzita@gmail.com';
-$contrasena='aranza';
-$sexo='Femenino';
-$edad='19';*/
+$claveusuario='PopClocUser'.rand(8000);
 if(isset($_POST['submit'])){
     try{
         $con = new PDO("sqlsrv:server=$host;Database=$dbname", $username, $password);
         $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql="INSERT INTO usuarios (id,claveusuario,nombreusuario,correo,contrasena,sexo,edad) VALUES ('2','PopClocUser002', 'Aranza Laguna', 'aranzzita@gmail.com', 'aranza', 'Femenino', '19')";
+        $sql="INSERT INTO usuarios (id,claveusuario,nombreusuario,correo,contrasena,sexo,edad) VALUES ('$newID+1','$claveusuario', '$_POST['nombre']', '$_POST['correo']', '$_POST['contrasena']', '$_POST['sexo']', '$_POST['edad']')";
         $con -> exec($sql);
         $newID=$con->lastInsertId();
        header('Location: error.php');  
