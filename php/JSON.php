@@ -19,6 +19,7 @@ foreach($res as $registro){
      $users= array("id"=>$registro[0], "claveusuario"=>$registro[1],"nombreusuario"=>$registro[2], "correo"=>$registro[3], "contrasena"=>$registro[4], "edad"=>$registro[5], "sexo"=>$registro[6]);
     print_r(json_encode($users)); 
 }
+do{
 if( $login_ok){
     $response["success"] = 1;
         $response["message"] = "Login correcto!";
@@ -28,5 +29,6 @@ if( $login_ok){
         $response["message"] = "Login INCORRECTO";
         die(json_encode($response));
     }
+}while(!isset($_POST['submit']));
 
 ?>
