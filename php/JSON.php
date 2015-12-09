@@ -16,7 +16,7 @@ $response["success"] = 0;
 }
 $res = $con ->query("SELECT * FROM usuarios");
 foreach($res as $registro){
-     $users= array("id"=>$registro[0], "claveusuario"=>$registro[1],"nombreusuario"=>$registro[2], "correo"=>$registro[3], "contrasena"=>$registro[4], "sexo"=>$registro[5], "edad"=>$registro[6]);
+     $users= array("id"=>$registro[0], "claveusuario"=>$registro[1],"nombreusuario"=>$registro[2], "correo"=>$registro[3], "contrasena"=>$registro[4], "edad"=>$registro[5], "sexo"=>$registro[6]);
     print_r(json_encode($users)); 
 }
 if( $rows > 0){
