@@ -26,6 +26,7 @@ $res->execute();
 $rows = $res->fetch(PDO::FETCH_NUM);
      if( $rows > 0){
          $_SESSION['login_user']=$correo;
+         $login_ok=true;
    header('Location: intro-page.php');
 }else{
    header('Location: error.html');
