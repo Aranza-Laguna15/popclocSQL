@@ -13,7 +13,7 @@ $correo='aranzzita@gmail.com';
 $contrasena='aranza';
 $sexo='Femenino';
 $edad='19';
-//if(isset($_POST['submit'])){
+if(isset($_POST['submit'])){
 $sql=$con -> prepare ("INSERT INTO usuarios (claveusuario,nombreusuario,correo,contrasena,sexo,edad) VALUES (?, ?, ?, ?, ?, ?)");
 $result=$sql -> execute(array($claveusuario,$nombreusuario,$correo,$contrasena,$sexo,$edad));
     if($result){
@@ -22,7 +22,7 @@ $result=$sql -> execute(array($claveusuario,$nombreusuario,$correo,$contrasena,$
     header('Location: error.html');
     die(print_r( sqlsrv_errors(), true));
     }
-//}
+}
 
  /*  $sql -> bindParam(':claveusuario',$claveusuario,PDO::PARAM_STR);  
     $sql -> bindParam(':nombreusuario',$_POST['nombre'],PDO::PARAM_STR);  (:claveusuario, :nombreusuario, :correo, :contrasena, :sexo, :edad)
