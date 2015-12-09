@@ -5,15 +5,12 @@
     $dbname = "databasepopcloc";
     
 if(isset($_POST['submit'])){
-    $sexo=$_POST['sexo'];
-    $edad=$_POST['edad'];
+    //$sexo=$_POST['sexo'];
+    //$edad=$_POST['edad'];
     try{
         $con = new PDO("sqlsrv:server=$host;Database=$dbname", $username, $password);
         $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $newID=$con->lastInsertId();
-        $newID++;
-        $claveusuario='PopClocUser'.$newID;
-        /*$sql="INSERT INTO usuarios (id,claveusuario,nombreusuario,correo,contrasena,sexo,edad) VALUES (:newID, :claveusuario, :nombreusuario, :correo, :contrasena, :sexo, :edad)";
+        $sql="INSERT INTO usuarios (id,claveusuario,nombreusuario,correo,contrasena,sexo,edad) VALUES (:newID, :claveusuario, :nombreusuario, :correo, :contrasena, :sexo, :edad)";
         $consulta=$con->prepare($sql);
         $consulta -> bindParam(':newID',$newID);
         $consulta -> bindParam(':claveusuario',$claveusuario);  
@@ -22,7 +19,10 @@ if(isset($_POST['submit'])){
         $consulta -> bindParam(':contrasena',$_POST['contrasena']);  
         $consulta -> bindParam(':sexo',$_POST['sexo']);  
         $consulta -> bindParam(':edad',$_POST['edad']);
-        $consulta -> exec();*/
+        $consulta -> exec();
+        $newID=$con->lastInsertId();
+        $newID++;
+        $claveusuario='PopClocUser'.$newID;
         
        header('Location: error.php');  
    
