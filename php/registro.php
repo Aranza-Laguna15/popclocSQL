@@ -1,6 +1,3 @@
-<?php
-include('registrer.php'); // Includes Login Script
-?>
 <!DOCTYPE html>
 <html>
 <head>
