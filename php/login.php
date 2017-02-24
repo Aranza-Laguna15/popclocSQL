@@ -1,8 +1,8 @@
 <?php
 session_start();
-    $username = "popcloc@b63ioz7h2m"; 
-    $password = "Manuel_$%&"; 
-    $host = "b63ioz7h2m.database.windows.net,1433"; 
+    $username = "popcloc@*******"; 
+    $password = "*******"; 
+    $host = "********.database.windows.net,****"; 
     $dbname = "databasepopcloc";
     $correo= $_POST['correo'];
     $contrasena = $_POST['contraseña'];
