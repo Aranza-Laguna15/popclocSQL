@@ -1,7 +1,7 @@
 <?php
-    $username = "popcloc@b63ioz7h2m"; 
-    $password = "Manuel_$%&"; 
-    $host = "b63ioz7h2m.database.windows.net,1433"; 
+     $username = "popcloc@*******"; 
+    $password = "*******"; 
+    $host = "********.database.windows.net,****"; 
     $dbname = "databasepopcloc";
  
     $con = new PDO("sqlsrv:server=$host;Database=$dbname", $username, $password);
